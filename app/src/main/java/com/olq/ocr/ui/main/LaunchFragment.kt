@@ -8,23 +8,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.olq.ocr.R
+import com.olq.ocr.base.BaseFragment
 import com.olq.ocr.base.navigation
 import kotlinx.android.synthetic.main.launch_fragment.*
 
-class LaunchFragment : Fragment() {
+class LaunchFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = LaunchFragment()
     }
 
     private lateinit var viewModel: LaunchViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.launch_fragment, container, false)
+    override fun getLayout(): Int {
+        return R.layout.launch_fragment
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -36,8 +34,9 @@ class LaunchFragment : Fragment() {
             //页面跳转
 //            findNavController().navigate(R.id.mainFragment)
             //页面跳转带参数
-          var action=  LaunchFragmentDirections.actionLaunchFragmentToMainFragment("hello world",1111111)
-            navigation(action)
+           LaunchFragmentDirections.actionLaunchFragmentToMainFragment("hello world",1111111).also {
+               navigation(it)
+           }
         }
     }
 
