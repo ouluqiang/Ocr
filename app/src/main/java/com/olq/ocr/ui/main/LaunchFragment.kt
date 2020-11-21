@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.olq.ocr.R
+import com.olq.ocr.base.navigation
 import kotlinx.android.synthetic.main.launch_fragment.*
 
 class LaunchFragment : Fragment() {
@@ -31,10 +32,12 @@ class LaunchFragment : Fragment() {
         // TODO: Use the ViewModel
 
         text.setOnClickListener {
-            var a="hello world"
 //            var action=
             //页面跳转
-            findNavController().navigate(R.id.mainFragment)
+//            findNavController().navigate(R.id.mainFragment)
+            //页面跳转带参数
+          var action=  LaunchFragmentDirections.actionLaunchFragmentToMainFragment("hello world",1111111)
+            navigation(action)
         }
     }
 

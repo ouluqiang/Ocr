@@ -18,5 +18,17 @@
         android:id="@+id/mainFragment"
         android:name="com.olq.ocr.ui.main.MainFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/main_fragment" >
+        <argument
+            android:name="a"
+            app:argType="string"
+            android:defaultValue="main"
+            />
+        <argument
+            android:name="b"
+            app:argType="integer"
+            android:defaultValue="0"
+            />
+
+    </fragment>
 </navigation>
