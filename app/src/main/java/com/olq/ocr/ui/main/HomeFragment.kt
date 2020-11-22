@@ -27,7 +27,7 @@ class HomeFragment : BaseFragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         // TODO: Use the ViewModel
-        var url="https://ouluqiang.github.io//post/markdown-bian-ji-qi-jiao-cheng"
+        var url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606068476821&di=78200ed8bf1729cff3c667131da92e5f&imgtype=0&src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg"
         ivImage.glideLoad(this,url)
     }
 
