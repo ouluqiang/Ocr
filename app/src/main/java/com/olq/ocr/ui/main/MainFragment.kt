@@ -29,9 +29,12 @@ class MainFragment : BaseFragment() {
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
         vpView.isUserInputEnabled=false
+        //不可变list
+//        var list= listOf<Fragment>(HomeFragment.newInstance(),PersonalFragment.newInstance())
+        //可变list
         var list= arrayListOf<Fragment>().also {
-            it.add(HomeFragment.newInstance())
-            it.add(PersonalFragment.newInstance())
+            it+=HomeFragment.newInstance()
+            it+=PersonalFragment.newInstance()
         }
         var adapter=FragmentAdapter(this,list)
         vpView.adapter=adapter
@@ -44,6 +47,12 @@ class MainFragment : BaseFragment() {
                     vpView.setCurrentItem(1,false)
                 }
             }
+//            if(it.itemId in R.id.it_main){
+//
+//            }
+//            for (i in list.iterator()){
+//
+//            }
             return@setOnNavigationItemSelectedListener true
         }
     }
