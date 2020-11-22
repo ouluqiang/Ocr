@@ -32,11 +32,11 @@ class LaunchFragment : BaseFragment() {
         text.setOnClickListener {
 //            var action=
             //页面跳转
-//            findNavController().navigate(R.id.mainFragment)
+            findNavController().navigate(R.id.mainFragment)
             //页面跳转带参数
-           LaunchFragmentDirections.actionLaunchFragmentToMainFragment("hello world",1111111).also {
-               navigation(it)
-           }
+//           LaunchFragmentDirections.actionLaunchFragmentToMainFragment("hello world",1111111).also {
+//               navigation(it)
+//           }
         }
     }
 

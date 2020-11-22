@@ -26,12 +26,35 @@ class MainFragment : BaseFragment() {
         return R.layout.main_fragment
     }
 
+    override fun initView(view: View, savedInstanceState: Bundle?) {
+        super.initView(view, savedInstanceState)
+        vpView.isUserInputEnabled=false
+        var list= arrayListOf<Fragment>().also {
+            it.add(HomeFragment.newInstance())
+            it.add(PersonalFragment.newInstance())
+        }
+        var adapter=FragmentAdapter(this,list)
+        vpView.adapter=adapter
+        bnView.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.it_main->{
+                    vpView.setCurrentItem(0,false)
+                }
+                R.id.it_personal->{
+                    vpView.setCurrentItem(1,false)
+                }
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
+    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun initViewModel(savedInstanceState: Bundle?) {
+        super.initViewModel(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
-
     }
+
+
+
 
 }
