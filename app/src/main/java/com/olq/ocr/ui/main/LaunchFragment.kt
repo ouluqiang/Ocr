@@ -9,10 +9,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.olq.ocr.R
 import com.olq.ocr.base.BaseFragment
+import com.olq.ocr.base.BaseViewModel
 import com.olq.ocr.base.navigation
 import kotlinx.android.synthetic.main.launch_fragment.*
 
-class LaunchFragment : BaseFragment() {
+class LaunchFragment : BaseFragment<BaseViewModel>() {
 
     companion object {
         fun newInstance() = LaunchFragment()

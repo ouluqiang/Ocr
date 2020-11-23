@@ -9,7 +9,7 @@ import com.olq.ocr.R
  *  create admin
  **/
 
-abstract class BaseActivity : AppCompatActivity(){
+abstract class BaseActivity<vm : BaseViewModel> : AppCompatActivity(){
 
 
     abstract fun getLayout():Int

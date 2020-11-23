@@ -13,7 +13,7 @@ import com.olq.ocr.ui.main.MainViewModel
  * create 2020/11/21 14:42
  *  create admin
  **/
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<vm : BaseViewModel> : Fragment() {
 
     //布局
     abstract fun getLayout():Int

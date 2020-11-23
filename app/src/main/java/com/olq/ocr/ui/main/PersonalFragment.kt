@@ -8,8 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.olq.ocr.R
 import com.olq.ocr.base.BaseFragment
+import com.olq.ocr.base.BaseViewModel
 
-class PersonalFragment : BaseFragment() {
+class PersonalFragment : BaseFragment<BaseViewModel>() {
 
     companion object {
         fun newInstance() = PersonalFragment()

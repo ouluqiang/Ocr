@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.olq.ocr.R
 import com.olq.ocr.base.BaseFragment
+import com.olq.ocr.base.BaseViewModel
 import com.olq.ocr.base.glideLoad
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : BaseFragment() {
+class HomeFragment : BaseFragment<BaseViewModel>() {
 
     companion object {
         fun newInstance() = HomeFragment()
