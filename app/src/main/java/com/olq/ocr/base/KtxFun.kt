@@ -1,5 +1,6 @@
 package com.olq.ocr.base
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -18,4 +19,5 @@ fun Fragment.navigation(rId : Int){
 fun Fragment.navigation(nav : NavDirections){
     findNavController().navigate(nav)
 }
+
 

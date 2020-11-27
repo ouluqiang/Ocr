@@ -1,15 +1,16 @@
 package com.olq.ocr.ui.main
 
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.olq.ocr.base.BaseBean
 import com.olq.ocr.base.BaseUrl
 import com.olq.ocr.base.BaseViewModel
 import com.olq.ocr.base.sendByGet
+import kotlinx.coroutines.launch
 
 class HomeViewModel : BaseViewModel() {
     // TODO: Implement the ViewModel
 
-    val liveDate:MutableLiveData<String> by lazy {
+    val liveDate: MutableLiveData<String> by lazy {
         MutableLiveData<String>()
     }
 //        get() {}
@@ -18,9 +19,11 @@ class HomeViewModel : BaseViewModel() {
 //
 //        }
 
-//    fun a(){
-//        sendByGet(BaseUrl.)
-//    }
+
+    fun getToken(){
+        sendByGet(BaseUrl.BASE_TOKEN,liveDate);
+
+    }
 
 
 }
