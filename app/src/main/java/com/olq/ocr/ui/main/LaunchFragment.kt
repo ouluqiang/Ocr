@@ -2,15 +2,10 @@ package com.olq.ocr.ui.main
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.olq.ocr.R
-import com.olq.ocr.base.BaseFragment
-import com.olq.ocr.base.BaseViewModel
-import com.olq.ocr.base.navigation
+import com.olq.base.app.BaseFragment
+import com.olq.base.app.BaseViewModel
 import kotlinx.android.synthetic.main.launch_fragment.*
 
 class LaunchFragment : BaseFragment<BaseViewModel>() {

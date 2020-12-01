@@ -1,11 +1,10 @@
 package com.olq.ocr.ui.main
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.olq.ocr.R
-import com.olq.ocr.base.BaseActivity
-import com.olq.ocr.base.BaseViewModel
+import com.olq.base.app.BaseActivity
+import com.olq.base.app.BaseViewModel
 import kotlinx.android.synthetic.main.activity_launch.*
 
 class LaunchActivity : BaseActivity<BaseViewModel>() {

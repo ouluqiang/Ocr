@@ -1,4 +1,4 @@
-package com.olq.ocr.base
+package com.olq.base
 
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView

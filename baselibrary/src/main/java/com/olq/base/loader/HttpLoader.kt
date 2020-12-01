@@ -1,11 +1,7 @@
-package com.olq.ocr.base
+package com.olq.base
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.rxLifeScope
-import rxhttp.toClass
-import rxhttp.wrapper.param.RxHttp
 
 /**
  * create 2020/11/23 17:28

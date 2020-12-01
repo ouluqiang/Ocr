@@ -2,8 +2,8 @@ package com.olq.ocr.ui.main
 
 import android.os.Bundle
 import com.olq.ocr.R
-import com.olq.ocr.base.BaseActivity
-import com.olq.ocr.base.BaseViewModel
+import com.olq.base.app.BaseActivity
+import com.olq.base.app.BaseViewModel
 
 class MainActivity : BaseActivity<BaseViewModel>() {
 

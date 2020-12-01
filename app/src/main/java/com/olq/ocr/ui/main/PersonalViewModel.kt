@@ -2,8 +2,7 @@ package com.olq.ocr.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.olq.ocr.base.BaseViewModel
+import com.olq.base.app.BaseViewModel
 
 class PersonalViewModel : BaseViewModel() {
     // TODO: Implement the ViewModel

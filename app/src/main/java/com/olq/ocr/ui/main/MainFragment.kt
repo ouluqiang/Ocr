@@ -3,14 +3,11 @@ package com.olq.ocr.ui.main
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.olq.ocr.R
-import com.olq.ocr.base.BaseFragment
-import com.olq.ocr.base.BaseViewModel
-import com.olq.ocr.base.ViewPagerAdapter
+import com.olq.base.app.BaseFragment
+import com.olq.base.app.BaseViewModel
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : BaseFragment<BaseViewModel>() {
@@ -38,7 +35,7 @@ class MainFragment : BaseFragment<BaseViewModel>() {
             it+=HomeFragment.newInstance()
             it+=PersonalFragment.newInstance()
         }
-        var adapter=ViewPagerAdapter(this,list)
+        var adapter= com.olq.base.ViewPagerAdapter(this, list)
         vpView.adapter=adapter
         bnView.setOnNavigationItemSelectedListener {
             when(it.itemId){

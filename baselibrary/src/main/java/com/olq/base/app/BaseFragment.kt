@@ -1,13 +1,10 @@
-package com.olq.ocr.base
+package com.olq.base.app
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import com.olq.ocr.R
-import com.olq.ocr.ui.main.MainViewModel
 
 /**
  * create 2020/11/21 14:42

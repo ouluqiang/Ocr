@@ -1,8 +1,7 @@
-package com.olq.ocr.base
+package com.olq.base.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.olq.ocr.R
 
 /**
  * create 2020/11/21 14:42

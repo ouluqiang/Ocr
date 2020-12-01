@@ -1,11 +1,10 @@
-package com.olq.ocr.base
+package com.olq.base
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import rxhttp.toClass
-import rxhttp.wrapper.param.RxHttp
 
 /**
  * create 2020/11/21 15:25

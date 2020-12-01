@@ -1,11 +1,9 @@
 package com.olq.ocr.ui.main
 
 import androidx.lifecycle.*
-import com.olq.ocr.base.BaseBean
-import com.olq.ocr.base.BaseUrl
-import com.olq.ocr.base.BaseViewModel
-import com.olq.ocr.base.sendByGet
-import kotlinx.coroutines.launch
+import com.olq.base.app.BaseUrl
+import com.olq.base.app.BaseViewModel
+import com.olq.base.sendByGet
 
 class HomeViewModel : BaseViewModel() {
     // TODO: Implement the ViewModel

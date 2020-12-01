@@ -1,4 +1,4 @@
-package com.olq.ocr.base
+package com.olq.base.app
 
 import android.app.Application
 import androidx.multidex.MultiDex

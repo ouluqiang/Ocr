@@ -1,4 +1,4 @@
-package com.olq.ocr.base
+package com.olq.base
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
