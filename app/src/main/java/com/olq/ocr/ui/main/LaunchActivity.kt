@@ -2,22 +2,32 @@ package com.olq.ocr.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import com.olq.ocr.R
 import com.olq.base.app.BaseActivity
 import com.olq.base.app.BaseViewModel
-import kotlinx.android.synthetic.main.activity_launch.*
+import com.olq.ocr.databinding.ActivityLaunchBinding
 
-class LaunchActivity : BaseActivity<BaseViewModel>() {
+class LaunchActivity : BaseActivity<BaseViewModel,ActivityLaunchBinding>() {
 
-    override fun getLayout(): Int {
-        return R.layout.activity_launch
+//    override fun getLayout(): Int {
+//
+//        return 0
+//    }
+    override fun getLayoutVb(): ActivityLaunchBinding {
+       return ActivityLaunchBinding.inflate(layoutInflater)
     }
 
     override fun init(savedInstanceState: Bundle?) {
+        //防止出现按Home键回到桌面时，再次点击重新进入该界面bug
+        if (intent.flags and Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT !== 0) {
+            finish()
+            return
+        }
 
-        button.setOnClickListener {
+        bind.button.setOnClickListener {
             startActivity(Intent(this,MainActivity::class.java))
         }
 
     }
+
+
 }

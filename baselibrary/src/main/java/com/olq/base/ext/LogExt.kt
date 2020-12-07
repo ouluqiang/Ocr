@@ -23,14 +23,19 @@ private enum class LEVEL {
 }
 
 
+fun logV(msg: String) = logV(TAG,msg)
 fun logV(tag: String = TAG, msg: String) = log(LEVEL.V, tag, msg)
 
+fun logD(msg: String) = logV(TAG,msg)
 fun logD(tag: String = TAG, msg: String) = log(LEVEL.D, tag, msg)
 
+fun logI(msg: String) = logV(TAG,msg)
 fun logI(tag: String = TAG, msg: String) = log(LEVEL.I, tag, msg)
 
+fun logW(msg: String) = logV(TAG,msg)
 fun logW(tag: String = TAG, msg: String) = log(LEVEL.W, tag, msg)
 
+fun logE(msg: String) = logV(TAG,msg)
 fun logE(tag: String = TAG, msg: String) = log(LEVEL.E, tag, msg)
 
 
