@@ -1,24 +1,26 @@
 package com.olq.main
 
 import android.os.Bundle
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.olq.base.app.BaseFragment
+import com.olq.main.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class HomeFragment : BaseFragment<HomeViewModel>() {
+class HomeFragment : BaseFragment<HomeViewModel,HomeFragmentBinding>() {
 
     companion object {
         fun newInstance() = HomeFragment()
     }
 
-//    private lateinit var viewModel: HomeViewModel
-    //
-    private  val viewModel: HomeViewModel by viewModels()
-
-    override fun getLayout(): Int {
-       return R.layout.home_fragment
+    override fun getLayoutVb(): HomeFragmentBinding {
+        return HomeFragmentBinding.inflate(layoutInflater)
     }
+
+//    private  val viewModel: HomeViewModel by viewModels()
+
+//    override fun getLayout(): Int {
+//       return R.layout.home_fragment
+//    }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,5 +42,7 @@ class HomeFragment : BaseFragment<HomeViewModel>() {
         }
 
     }
+
+
 
 }

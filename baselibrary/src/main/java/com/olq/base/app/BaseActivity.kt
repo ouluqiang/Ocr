@@ -5,10 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.olq.base.getClassType
-import java.lang.reflect.GenericArrayType
-import java.lang.reflect.ParameterizedType
-import java.lang.reflect.Type
-import java.lang.reflect.TypeVariable
 
 /**
  * create 2020/11/21 14:42
@@ -19,9 +15,9 @@ abstract class BaseActivity<VM : BaseViewModel, VB : ViewBinding> : AppCompatAct
 
     lateinit var bind:VB
     lateinit var viewModel:VM
-
-//    open fun getLayout():Int{return 0}
     abstract fun getLayoutVb():VB
+    //    open fun getLayout():Int{return 0}
+
 
 
     abstract fun init(savedInstanceState: Bundle?)
@@ -30,7 +26,7 @@ abstract class BaseActivity<VM : BaseViewModel, VB : ViewBinding> : AppCompatAct
         super.onCreate(savedInstanceState)
         bind=getLayoutVb()
         setContentView(bind.root)
-       viewModel= ViewModelProvider(this).get(getClassType(this,0))
+        viewModel= ViewModelProvider(this).get(getClassType(this,0))
         init(savedInstanceState)
 //        if (savedInstanceState == null) {
 //            supportFragmentManager.beginTransaction()
@@ -41,35 +37,35 @@ abstract class BaseActivity<VM : BaseViewModel, VB : ViewBinding> : AppCompatAct
 
 
 
-    fun getType(o: Any): Type {
-       var type = o.javaClass.genericSuperclass
-        when (type) {
-            is ParameterizedType -> {
-                return getGenericType(type)
-            }
-            is TypeVariable<*> -> {
-                return getType(type.bounds[0])
-            }
-        }
-        return type
-    }
-
-    fun getGenericType(type: ParameterizedType): Type {
-        if (type.actualTypeArguments.isEmpty()) return type
-        val actualType = type.actualTypeArguments[0]
-        when (actualType) {
-            is ParameterizedType -> {
-                return actualType.rawType
-            }
-            is GenericArrayType -> {
-                return actualType.genericComponentType
-            }
-            is TypeVariable<*> -> {
-                return getType(actualType.bounds[0])
-            }
-        }
-        return actualType
-    }
+//    fun getType(o: Any): Type {
+//       var type = o.javaClass.genericSuperclass
+//        when (type) {
+//            is ParameterizedType -> {
+//                return getGenericType(type)
+//            }
+//            is TypeVariable<*> -> {
+//                return getType(type.bounds[0])
+//            }
+//        }
+//        return type
+//    }
+//
+//    fun getGenericType(type: ParameterizedType): Type {
+//        if (type.actualTypeArguments.isEmpty()) return type
+//        val actualType = type.actualTypeArguments[0]
+//        when (actualType) {
+//            is ParameterizedType -> {
+//                return actualType.rawType
+//            }
+//            is GenericArrayType -> {
+//                return actualType.genericComponentType
+//            }
+//            is TypeVariable<*> -> {
+//                return getType(actualType.bounds[0])
+//            }
+//        }
+//        return actualType
+//    }
 
 
 }

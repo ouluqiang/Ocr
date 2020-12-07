@@ -5,15 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.viewbinding.ViewBinding
+import com.olq.base.getClassType
 
 /**
  * create 2020/11/21 14:42
  *  create admin
  **/
-abstract class BaseFragment<vm : BaseViewModel> : Fragment() {
+abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
 
-    //布局
-    abstract fun getLayout():Int
+    lateinit var bind:VB
+    lateinit var viewModel:VM
+    abstract fun getLayoutVb():VB
+
     //open 表示允许创建任意的子类并重写方法
     //控件初始化
     open fun initView(view: View, savedInstanceState: Bundle?){}
@@ -27,7 +32,9 @@ abstract class BaseFragment<vm : BaseViewModel> : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        return inflater.inflate(getLayout(), container, false)
+        bind=getLayoutVb()
+        return bind.root
+//        return inflater.inflate(getLayout(), container, false)
     }
 
 
@@ -39,6 +46,7 @@ abstract class BaseFragment<vm : BaseViewModel> : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        viewModel= ViewModelProvider(this).get(getClassType(this,0))
         initViewModel(savedInstanceState)
     }
 

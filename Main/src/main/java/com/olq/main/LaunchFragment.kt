@@ -1,27 +1,31 @@
 package com.olq.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.olq.base.app.BaseFragment
 import com.olq.base.app.BaseViewModel
+import com.olq.main.databinding.LaunchFragmentBinding
 import kotlinx.android.synthetic.main.launch_fragment.*
 
-class LaunchFragment : BaseFragment<BaseViewModel>() {
+class LaunchFragment : BaseFragment<BaseViewModel,LaunchFragmentBinding>() {
 
     companion object {
         fun newInstance() = LaunchFragment()
     }
 
-    private lateinit var viewModel: LaunchViewModel
-    override fun getLayout(): Int {
-        return R.layout.launch_fragment
+    override fun getLayoutVb(): LaunchFragmentBinding {
+        return LaunchFragmentBinding.inflate(layoutInflater)
     }
+
+//    private lateinit var viewModel: LaunchViewModel
+//    override fun getLayout(): Int {
+//        return R.layout.launch_fragment
+//    }
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LaunchViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(LaunchViewModel::class.java)
         // TODO: Use the ViewModel
 
         text.setOnClickListener {
@@ -34,5 +38,7 @@ class LaunchFragment : BaseFragment<BaseViewModel>() {
 //           }
         }
     }
+
+
 
 }

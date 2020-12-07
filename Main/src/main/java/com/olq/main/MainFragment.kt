@@ -1,28 +1,28 @@
 package com.olq.main
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.olq.base.app.BaseFragment
 import com.olq.base.app.BaseViewModel
+import com.olq.main.databinding.MainFragmentBinding
 import kotlinx.android.synthetic.main.main_fragment.*
 
-class MainFragment : BaseFragment<BaseViewModel>() {
+class MainFragment : BaseFragment<BaseViewModel,MainFragmentBinding>() {
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    override fun getLayoutVb(): MainFragmentBinding {
+        return MainFragmentBinding.inflate(layoutInflater)
+    }
+
     //接收传值
     val args:MainFragmentArgs by navArgs()
 
 
-    override fun getLayout(): Int {
-        return R.layout.main_fragment
-    }
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
@@ -57,7 +57,7 @@ class MainFragment : BaseFragment<BaseViewModel>() {
 
     override fun initViewModel(savedInstanceState: Bundle?) {
         super.initViewModel(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         // TODO: Use the ViewModel
     }
 
