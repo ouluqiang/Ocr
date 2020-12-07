@@ -19,7 +19,3 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-
--keep class * extends androidx.viewbinding.ViewBinding {*;}
-#-dontwarn com.kingja.loadsir.**
-#-keep class com.kingja.loadsir.** {*;}
