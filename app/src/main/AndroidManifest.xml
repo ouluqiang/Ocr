@@ -3,7 +3,9 @@
     package="com.olq.ocr">
 
 
-    <application>
+    <application
+        android:name=".App"
+        >
 
     </application>
 

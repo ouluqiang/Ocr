@@ -30,7 +30,7 @@ class PersonalFragment : BaseFragment<PersonalViewModel,PersonalFragmentBinding>
         })
         val homeView: HomeViewModel by viewModels()
         text.setOnClickListener {
-            homeView.liveDate.postValue("")
+//            homeView.liveDate.postValue("")
             viewModel.getUser()
         }
     }

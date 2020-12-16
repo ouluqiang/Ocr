@@ -1,7 +1,6 @@
 package com.olq.main
 
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import com.olq.base.app.BaseFragment
 import com.olq.main.databinding.HomeFragmentBinding
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -29,17 +28,31 @@ class HomeFragment : BaseFragment<HomeViewModel,HomeFragmentBinding>() {
         // TODO: Use the ViewModel
 
 
-        viewModel.liveDate.observe(viewLifecycleOwner, Observer<String> {
+        viewModel.liveDate.observe(viewLifecycleOwner,  {
 //            ivImage.glideLoad(this,it)
-            text.text=it
+            text.text=it.errorMsg
         })
+        viewModel.articleLiveDate.observe(viewLifecycleOwner, {
+//            ivImage.glideLoad(this,it)
+            text.text=it.datas[0].toString()
+        })
+        viewModel.bannerLiveData.observe(viewLifecycleOwner, {
+//            ivImage.glideLoad(this,it)
+            text.text=it.toString()
+        })
+//        viewModel.bannerLiveData.observe(viewLifecycleOwner, {
+////            ivImage.glideLoad(this,it)
+//            text.text=it.toString()
+//        })
 
         ivImage.setOnClickListener {
 //            var url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606068476821&di=78200ed8bf1729cff3c667131da92e5f&imgtype=0&src=http%3A%2F%2Fmedia-cdn.tripadvisor.com%2Fmedia%2Fphoto-s%2F01%2F3e%2F05%2F40%2Fthe-sandbar-that-links.jpg"
 //            viewModel.liveDate.postValue(url)
 //            viewModel.liveDate.value = url
-            viewModel.getToken()
+//            viewModel.()
         }
+
+        viewModel.getArticleList()
 
     }
 

@@ -2,6 +2,7 @@ package com.olq.base.app
 
 import android.app.Application
 import androidx.multidex.MultiDex
+import cat.ereza.customactivityoncrash.config.CaocConfig
 import com.kingja.loadsir.callback.SuccessCallback
 import com.kingja.loadsir.core.LoadSir
 import com.olq.base.status.EmptyCallback
@@ -26,6 +27,10 @@ abstract class BaseApplication : Application() {
             .addCallback(LoadingCallBack())
             .setDefaultCallback(SuccessCallback::class.java)
             .commit()
+
+
+
+
 
     }
 

@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import java.lang.reflect.ParameterizedType
+import java.lang.reflect.Type
 
 /**
  * create 2020/11/21 15:25
@@ -13,9 +14,13 @@ import java.lang.reflect.ParameterizedType
 
 
 
-fun <T> getType(o: Any,i:Int): T {
+fun  getType(o: Any,i:Int): Type {
     val type = o.javaClass.genericSuperclass as ParameterizedType
-    return (type.actualTypeArguments[i] as Class<T>).newInstance()
+    if (type is ParameterizedType) {
+        return type.actualTypeArguments[i]
+    }else{
+        return Any::class.java
+    }
 }
 fun <T> getClassType(o: Any,i:Int): T {
     val type = o.javaClass.genericSuperclass as ParameterizedType
