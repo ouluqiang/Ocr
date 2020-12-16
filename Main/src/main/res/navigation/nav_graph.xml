@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/launchFragment"
-        android:name="com.olq.main.LaunchFragment"
+        android:name="com.olq.main.launch.LaunchFragment"
         android:label="launch_fragment"
         tools:layout="@layout/launch_fragment" >
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.olq.main.MainFragment"
+        android:name="com.olq.main.launch.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" >
         <argument

@@ -1,4 +1,4 @@
-package com.olq.main
+package com.olq.main.launch
 
 import android.os.Bundle
 import androidx.activity.addCallback

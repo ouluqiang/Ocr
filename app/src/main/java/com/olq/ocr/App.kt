@@ -2,7 +2,7 @@ package com.olq.ocr
 
 import cat.ereza.customactivityoncrash.config.CaocConfig
 import com.olq.base.app.BaseApplication
-import com.olq.main.LaunchActivity
+import com.olq.main.launch.LaunchActivity
 
 /**
  * create 2020/12/11 9:27

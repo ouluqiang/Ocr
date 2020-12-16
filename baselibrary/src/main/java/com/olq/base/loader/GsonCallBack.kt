@@ -1,6 +1,6 @@
 //package com.olq.base.loader
 //
-//import com.olq.base.bean.BaseBean
+//import com.olq.main.bean.BaseBean
 //import com.olq.base.getType
 //import rxhttp.wrapper.utils.GsonUtil
 //

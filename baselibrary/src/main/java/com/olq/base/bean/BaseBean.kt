@@ -10,10 +10,14 @@ package com.olq.base.bean
 /**
  * 基类
  */
-data class BaseBean<T>(
-    var data: T,
-    var errorCode: Int,
-    var errorMsg: String
-){
-}
+//data class BaseBean<T>(
+//    var data: T,
+//    var errorCode: Int,
+//    var errorMsg: String
+//)
 
+data class BaseBean<T>(
+    val code: Int,
+    val data:T,
+    val msg: String
+)

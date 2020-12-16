@@ -43,20 +43,20 @@ open class ResponseParser<T> : AbstractParser<T> {
     override fun onParse(response: Response): T {
         val type: Type = ParameterizedTypeImpl[BaseBean::class.java, mType] //获取泛型类型
 //        val type: Type = ParameterizedTypeImpl.getParameterized(BaseBean::class.java, mType) //获取泛型类型
-        val data: BaseBean<T> = response.convert(type)
+        val bean: BaseBean<T> = response.convert(type)
 //        val data: BaseBean<T> = response.convert(type)
-        var t = data.data //获取data字段
-        if (t == null && mType === kotlin.String::class.java) {
+        var t = bean.data //获取data字段
+        if (t == null && mType === String::class.java) {
             /*
              * 考虑到有些时候服务端会返回：{"errorCode":0,"errorMsg":"关注成功"}  类似没有data的数据
              * 此时code正确，但是data字段为空，直接返回data的话，会报空指针错误，
              * 所以，判断泛型为String类型时，重新赋值，并确保赋值不为null
              */
             @Suppress("UNCHECKED_CAST")
-            t = data.errorMsg as T
+            t = bean.msg as T
         }
-        if (data.errorCode != 0 || t == null) { //code不等于0，说明数据不正确，抛出异常
-            throw ParseException(data.errorCode.toString(), data.errorMsg, response)
+        if (bean.code != 200 || t == null) { //code不等于0，说明数据不正确，抛出异常
+            throw ParseException(bean.code.toString(), bean.msg, response)
         }
         return t
     }

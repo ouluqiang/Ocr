@@ -23,7 +23,7 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
     //控件初始化
     open fun initView(view: View, savedInstanceState: Bundle?){}
     //activity初始化完成
-    open fun initViewModel(savedInstanceState: Bundle?){}
+    open fun initViewModel(){}
 
     init {
 
@@ -47,7 +47,7 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding> : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel= ViewModelProvider(this).get(getClassType(this,0))
-        initViewModel(savedInstanceState)
+        initViewModel()
     }
 
 

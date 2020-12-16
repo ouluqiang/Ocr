@@ -3,8 +3,14 @@
 
     <item
         android:id="@+id/it_main"
-        android:title="Item1" />
+        android:title="首页" />
+    <item
+        android:id="@+id/it_classify"
+        android:title="分类" />
+    <item
+        android:id="@+id/it_found"
+        android:title="发现" />
     <item
         android:id="@+id/it_personal"
-        android:title="Item2" />
+        android:title="我的" />
 </menu>

@@ -2,7 +2,6 @@ package com.olq.base.loader;
 
 
 import com.olq.base.bean.BaseBean;
-import com.olq.ocr.utils.LogExtKt;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -45,7 +44,7 @@ public abstract   class GsonCallBack<T> {
 
     public void onBody(String json) {
         BaseBean bean = GsonUtil.fromJson(json, type);
-        LogExtKt.logE(bean.getErrorCode()+"");
+//        LogExtKt.logE(bean.getErrorCode()+"");
     }
 
 

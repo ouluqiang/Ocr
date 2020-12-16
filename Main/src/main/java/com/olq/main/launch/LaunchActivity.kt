@@ -1,4 +1,4 @@
-package com.olq.main
+package com.olq.main.launch
 
 import android.content.Intent
 import android.os.Bundle

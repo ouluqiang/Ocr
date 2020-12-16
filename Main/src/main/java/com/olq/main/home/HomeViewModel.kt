@@ -1,4 +1,4 @@
-package com.olq.main
+package com.olq.main.home
 
 import androidx.lifecycle.MutableLiveData
 import com.olq.base.app.BaseViewModel
@@ -8,6 +8,7 @@ import com.olq.base.bean.CBean
 import com.olq.base.bean.ListBean
 import com.olq.base.loader.BaseUrl
 import com.olq.base.loader.sendByGet
+import com.olq.main.bean.CategoryBean
 
 class HomeViewModel : BaseViewModel() {
     // TODO: Implement the ViewModel
@@ -21,18 +22,19 @@ class HomeViewModel : BaseViewModel() {
     val bannerLiveData: MutableLiveData<List<CBean>> by lazy {
         MutableLiveData<List<CBean>>()
     }
-    val a: MutableLiveData<List<ArticleBean>> by lazy {
-        MutableLiveData<List<ArticleBean>>()
+    val categoryLiveDate: MutableLiveData<List<CategoryBean>> by lazy {
+        MutableLiveData<List<CategoryBean>>()
     }
 
 
     fun getArticleList(){
-        sendByGet(BaseUrl.ARTICLE_LIST,articleLiveDate)
+        sendByGet(BaseUrl.CATEGORY,categoryLiveDate)
 //        sendByGet(BaseUrl.BANNER,liveDate);
 //        sendByGet(BaseUrl.ARTICLE_LIST,articleLiveDate);
 ////        sendByGet(BaseUrl.TOP,liveDateBean);
 //        sendByGet(BaseUrl.TOP,bannerLiveData);
 
+//        sendByGetString(BaseUrl.CATEGORY)
 
     }
 

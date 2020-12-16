@@ -1,9 +1,10 @@
-package com.olq.main
+package com.olq.main.launch
 
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
 import com.olq.base.app.BaseFragment
 import com.olq.base.app.BaseViewModel
+import com.olq.main.R
 import com.olq.main.databinding.LaunchFragmentBinding
 import kotlinx.android.synthetic.main.launch_fragment.*
 
