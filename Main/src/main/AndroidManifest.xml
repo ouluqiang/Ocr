@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.olq.main">
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,12 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.olq.main.launch.MainActivity"
-
-            ></activity>
-        <activity android:name="com.olq.main.launch.LaunchActivity"
-            android:theme="@style/FullscreenTheme"
-            >
+        <activity
+            android:name=".Test.TestActivity"
+            android:label="@string/title_activity_test"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".launch.MainActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"
+            />
+        <activity
+            android:name=".launch.LaunchActivity"
+            android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,4 +26,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

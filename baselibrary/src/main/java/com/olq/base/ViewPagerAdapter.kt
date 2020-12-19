@@ -11,6 +11,8 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class ViewPagerAdapter(fragment: Fragment, var list: List<Fragment>) : FragmentStateAdapter(fragment) {
 
 
+
+
     override fun getItemCount(): Int {
         return list.size
 
@@ -19,6 +21,7 @@ class ViewPagerAdapter(fragment: Fragment, var list: List<Fragment>) : FragmentS
     override fun createFragment(position: Int): Fragment {
         return list[position]
     }
+
 
 
 }

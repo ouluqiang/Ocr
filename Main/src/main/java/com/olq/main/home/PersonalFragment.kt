@@ -7,7 +7,7 @@ import com.olq.base.app.BaseFragment
 import com.olq.main.databinding.PersonalFragmentBinding
 import kotlinx.android.synthetic.main.personal_fragment.*
 
-class PersonalFragment : BaseFragment<PersonalViewModel,PersonalFragmentBinding>() {
+class PersonalFragment private constructor(): BaseFragment<PersonalViewModel,PersonalFragmentBinding>() {
 
     companion object {
         fun newInstance() = PersonalFragment()

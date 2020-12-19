@@ -3,15 +3,14 @@ package com.olq.main.launch
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.navArgs
+import com.olq.base.ViewPagerAdapter
 import com.olq.base.app.BaseFragment
 import com.olq.base.app.BaseViewModel
-import com.olq.main.home.HomeFragment
-import com.olq.main.MainFragmentArgs
-import com.olq.main.home.PersonalFragment
 import com.olq.main.R
 import com.olq.main.databinding.MainFragmentBinding
-import kotlinx.android.synthetic.main.main_fragment.*
+import com.olq.main.home.FoundFragment
+import com.olq.main.home.HomeFragment
+import com.olq.main.home.PersonalFragment
 
 class MainFragment : BaseFragment<BaseViewModel,MainFragmentBinding>() {
 
@@ -24,35 +23,37 @@ class MainFragment : BaseFragment<BaseViewModel,MainFragmentBinding>() {
     }
 
     //接收传值
-    val args: MainFragmentArgs by navArgs()
+//    val args: MainFragmentArgs by navArgs()
 
 
 
     override fun initView(view: View, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
-        vpView.isUserInputEnabled=false
+       bind. vpView.isUserInputEnabled=false
         //不可变list
 //        var list= listOf<Fragment>(HomeFragment.newInstance(),PersonalFragment.newInstance())
         //可变list
         var list= arrayListOf<Fragment>().also {
             it+= HomeFragment.newInstance()
+            it+= FoundFragment.newInstance()
+            it+= HomeFragment.newInstance()
             it+= PersonalFragment.newInstance()
         }
-        var adapter= com.olq.base.ViewPagerAdapter(this, list)
-        vpView.adapter=adapter
-        bnView.setOnNavigationItemSelectedListener {
+        var adapter= ViewPagerAdapter(this, list)
+        bind. vpView.adapter=adapter
+        bind.  bnView.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.it_main ->{
-                    vpView.setCurrentItem(0,false)
+                    bind.  vpView.setCurrentItem(0,false)
                 }
                 R.id.it_classify ->{
-                    vpView.setCurrentItem(1,false)
+                    bind. vpView.setCurrentItem(1,false)
                 }
                 R.id.it_found ->{
-                    vpView.setCurrentItem(2,false)
+                    bind.  vpView.setCurrentItem(2,false)
                 }
                 R.id.it_personal ->{
-                    vpView.setCurrentItem(3,false)
+                    bind.  vpView.setCurrentItem(3,false)
                 }
             }
             return@setOnNavigationItemSelectedListener true
