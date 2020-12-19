@@ -21,6 +21,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/main_botton_item"
+        android:background="@color/white"
         >
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

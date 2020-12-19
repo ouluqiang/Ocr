@@ -6,7 +6,6 @@ import com.olq.base.app.BaseFragment
 import com.olq.base.app.BaseViewModel
 import com.olq.main.R
 import com.olq.main.databinding.LaunchFragmentBinding
-import kotlinx.android.synthetic.main.launch_fragment.*
 
 class LaunchFragment : BaseFragment<BaseViewModel,LaunchFragmentBinding>() {
 
@@ -29,7 +28,7 @@ class LaunchFragment : BaseFragment<BaseViewModel,LaunchFragmentBinding>() {
 //        viewModel = ViewModelProvider(this).get(LaunchViewModel::class.java)
         // TODO: Use the ViewModel
 
-        text.setOnClickListener {
+        bind.text.setOnClickListener {
 //            var action=
             //页面跳转
             findNavController().navigate(R.id.mainFragment)
