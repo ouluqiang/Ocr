@@ -14,6 +14,7 @@ class FoundFragment private constructor(): BaseFragment<FoundViewModel,FragmentF
 
     var listFather= arrayListOf<CategoryBean>()
     var listChild= arrayListOf<CategoryBean>()
+    var list= arrayListOf<CategoryBean>()
     var fatherAdapter: FatherAdapter? =null
     companion object {
         fun newInstance() = FoundFragment()
@@ -40,9 +41,18 @@ class FoundFragment private constructor(): BaseFragment<FoundViewModel,FragmentF
             it.forEach { item->
                     if (item.pid==0){
                         listFather.add(item)
-                    }else {
+                    }
+                listFather.forEach { father->
+                    if (item.pid==father.id){
                         listChild.add(item)
                     }
+                    listChild.forEach { child->
+                        if (item.pid==child.id){
+                            list.add(item)
+                        }
+                    }
+                }
+
             }
             fatherAdapter?.notifyDataSetChanged()
 

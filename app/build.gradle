@@ -7,15 +7,16 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.olq.ocr"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,8 +47,13 @@ android {
 dependencies {
 
 //    api project(':baselibrary')
-    api project(':Main')
-
+    if (!isApplication){
+        api project(':Main')
+    }
+    api project(':baselibrary')
+//    rootProject.ext.dependencies.other.each{
+//        implementation project(it)
+//    }
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 //    implementation 'androidx.core:core-ktx:1.3.2'
 //    implementation 'androidx.appcompat:appcompat:1.2.0'

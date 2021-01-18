@@ -6,15 +6,18 @@ plugins {
     id 'kotlin-kapt'
 }
 
+//获取config文件中的配置 rootProject 项目的主对象
+def config=rootProject.ext.android
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,7 +27,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'boolean', 'isApplication', isApplication.toString()
         }
+//            advanced {
+//                buildConfigField 'boolean', 'isApplication', rootProject.ext.android.isApplication.toString()
+//            }
+        debug {
+            buildConfigField 'boolean', 'isApplication', isApplication.toString()
+        }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

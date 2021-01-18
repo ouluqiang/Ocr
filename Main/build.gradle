@@ -1,23 +1,49 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-//    id 'kotlin-android-extensions'
-    id "androidx.navigation.safeargs.kotlin"
-    id 'kotlin-kapt'
+//配置apply
+if (isApplication){
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
 }
+apply plugin : 'kotlin-android'
+apply plugin :  "androidx.navigation.safeargs.kotlin"
+apply plugin :  'kotlin-kapt'
+
+
+//plugins {
+//    if (rootProject.ext.android.isApplication){
+//        id 'com.android.application'
+//    }else{
+//        id 'com.android.library'
+//    }
+//    id 'kotlin-android'
+////    id 'kotlin-android-extensions'
+//    id "androidx.navigation.safeargs.kotlin"
+//    id 'kotlin-kapt'
+//}
+
+//获取config文件中的配置 rootProject 项目的主对象
+def config=rootProject.ext.android
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        if (isApplication) {
+            applicationId "com.olq.main"
+        }
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
 
+        versionCode config.versionCode
+        versionName config.versionName
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        //配置BuildConfig 代码中可以调用判断moudle是否为组件
+        buildConfigField("boolean","isApplication",String.valueOf(isApplication))
+
     }
 
     buildTypes {
@@ -40,6 +66,20 @@ android {
 //    dataBinding {
 //        enabled = true
 //    }
+
+    sourceSets{
+        main{
+            //如果moudle为组件则配置 AndroidManifest
+            if (isApplication) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                // 配置组件模式下的java代码主文件
+                java.srcDirs 'src/main/java','src/main/dubug/java'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java.srcDir 'src/main/java'
+            }
+        }
+    }
 
 
 }
