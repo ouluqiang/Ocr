@@ -43,7 +43,17 @@ android {
 
         //配置BuildConfig 代码中可以调用判断moudle是否为组件
         buildConfigField("boolean","isApplication",String.valueOf(isApplication))
-
+        //ARouter
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
 
     buildTypes {
@@ -86,4 +96,5 @@ android {
 
 dependencies {
     implementation project(':baselibrary')
+
 }

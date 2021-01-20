@@ -2,10 +2,13 @@ package com.olq.main.launch
 
 import android.content.Intent
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.olq.base.app.BaseActivity
 import com.olq.base.app.BaseViewModel
+import com.olq.base.router.BaseRouter
 import com.olq.main.databinding.ActivityLaunchBinding
 
+@Route(path = BaseRouter.LAUNCH ,name = "启动页")
 class LaunchActivity : BaseActivity<BaseViewModel, ActivityLaunchBinding>() {
 
 

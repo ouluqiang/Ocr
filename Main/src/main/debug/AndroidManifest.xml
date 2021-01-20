@@ -7,15 +7,18 @@
         android:name=".TextApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/app_name_test"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.NoActionBar"
         >
         <activity
             android:name=".Test.TestActivity"
             android:label="@string/title_activity_test"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            ></activity>
+        <activity
+            android:name=".launch.MainActivity"
+            ></activity>
 
         <activity
             android:name=".launch.LaunchActivity"

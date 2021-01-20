@@ -2,11 +2,14 @@ package com.olq.main.Test
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.olq.base.router.BaseRouter
 import com.olq.main.R
 
+@Route(path = BaseRouter.MAIN_TEST,name = "测试")
 class TestActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
