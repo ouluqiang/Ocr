@@ -7,9 +7,10 @@ package com.olq.base.router
 interface BaseRouter {
 
     companion object {
-        const val MAIN= "Main"
-        const val LAUNCH= "Launch"
-        const val MAIN_TEST= "MainTest"
+        private const val MAIN_MODULE= "/MainModule/"
+        const val LAUNCH= MAIN_MODULE+"Launch"
+        const val MAIN= MAIN_MODULE+"Main"
+        const val MAIN_TEST= MAIN_MODULE+"MainTest"
 
 
 

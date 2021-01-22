@@ -1,6 +1,7 @@
 package com.olq.base
 
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 /**
@@ -8,10 +9,16 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
  *  create admin
  **/
 
-class ViewPagerAdapter(fragment: Fragment, var list: List<Fragment>) : FragmentStateAdapter(fragment) {
+class ViewPagerAdapter : FragmentStateAdapter {
 
+    var list: List<Fragment> = arrayListOf()
 
-
+    constructor(fragmentActivity:FragmentActivity,  list: List<Fragment>):super(fragmentActivity){
+        this.list=list;
+    }
+    constructor(fragment:Fragment,  list: List<Fragment>):super(fragment){
+        this.list=list;
+    }
 
     override fun getItemCount(): Int {
         return list.size

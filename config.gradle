@@ -20,12 +20,13 @@ ext{
                      'com.google.android.material:material:1.2.1',
                      'androidx.constraintlayout:constraintlayout:2.0.4',
                      'androidx.legacy:legacy-support-v4:1.0.0',
-
                     //方法数限制
-                     'com.android.support:multidex:1.0.3'
+                     'androidx.multidex:multidex:2.0.1'
             ],
             other:[
                     ':baselibrary',
-            ]
+            ],
+            arouter_api: 'com.alibaba:arouter-api:1.5.1',
+            arouter_compiler: 'com.alibaba:arouter-compiler:1.5.1'
     ]
 }

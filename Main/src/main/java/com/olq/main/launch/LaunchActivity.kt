@@ -3,6 +3,7 @@ package com.olq.main.launch
 import android.content.Intent
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.olq.base.app.BaseActivity
 import com.olq.base.app.BaseViewModel
 import com.olq.base.router.BaseRouter
@@ -24,7 +25,8 @@ class LaunchActivity : BaseActivity<BaseViewModel, ActivityLaunchBinding>() {
         }
 
         bind.button.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+//            startActivity(Intent(this, MainActivity::class.java))
+            ARouter.getInstance().build(BaseRouter.MAIN).navigation();
         }
 
     }

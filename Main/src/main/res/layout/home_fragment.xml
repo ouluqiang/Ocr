@@ -56,41 +56,42 @@
                         />
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.Toolbar>
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tlLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:tabMode="scrollable"
-            android:background="@color/white"
-            app:tabTextColor="@color/bg_status"
-            app:tabIndicatorColor="@color/bg_status"
-            app:tabIndicatorFullWidth="false"
-            />
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tlLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:tabMode="scrollable"-->
+<!--            android:background="@color/white"-->
+<!--            app:tabTextColor="@color/bg_status"-->
+<!--            app:tabIndicatorColor="@color/bg_status"-->
+<!--            app:tabIndicatorFullWidth="false"-->
+<!--            />-->
 <!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
 <!--    <include layout="@layout/content_scrolling" />-->
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-<!--        >-->
-<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical"-->
-<!--            >-->
-
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vpView"
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srlView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                />
-<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+                android:layout_height="150dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-<!--    </androidx.core.widget.NestedScrollView>-->
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -23,6 +23,8 @@ apply plugin :  'kotlin-kapt'
 
 //获取config文件中的配置 rootProject 项目的主对象
 def config=rootProject.ext.android
+def lib=rootProject.ext.dependencies
+
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -96,5 +98,5 @@ android {
 
 dependencies {
     implementation project(':baselibrary')
-
+    kapt lib.arouter_compiler
 }

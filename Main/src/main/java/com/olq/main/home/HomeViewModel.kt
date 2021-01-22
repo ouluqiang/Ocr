@@ -3,6 +3,8 @@ package com.olq.main.home
 import androidx.lifecycle.MutableLiveData
 import com.olq.base.app.BaseViewModel
 import com.olq.base.bean.BaseBean
+import com.olq.base.loader.BaseUrl
+import com.olq.base.loader.sendByGetString
 import com.olq.main.bean.CategoryBean
 
 class HomeViewModel : BaseViewModel() {
@@ -19,7 +21,7 @@ class HomeViewModel : BaseViewModel() {
 
     fun getArticleList(){
 //        sendByGet(BaseUrl.CATEGORY,categoryLiveDate)
-
+        sendByGetString(BaseUrl.ARTICLE_LIST,)
     }
 
 
